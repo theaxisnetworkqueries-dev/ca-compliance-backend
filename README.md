@@ -8,9 +8,6 @@ Structured cleanly for easy development, collaboration, and future scaling.
 ## 🚀 Tech Stack
 - **Node.js + Express**
 - **MongoDB + Mongoose**
-- **dotenv**
-- **CORS**
-- **Body-Parser**
 
 ---
 
@@ -44,4 +41,5 @@ Server is running on http://localhost:5000
 - MongoDB Atlas for production
 - Frontend and backend will remain separate repos
 - Follow clean architecture while adding new features
+
 

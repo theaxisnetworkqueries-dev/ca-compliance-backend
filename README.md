@@ -14,20 +14,6 @@ Structured cleanly for easy development, collaboration, and future scaling.
 
 ---
 
-## 📁 Folder Structure
-src/
-├── config/
-├── controllers/
-├── middlewares/
-├── models/
-└── routes/
-server.js
-.env
-package.json
-README.md
-
----
-
 ## 🛠️ Setup Instructions
 
 ### **1. Clone the repository**
@@ -58,3 +44,4 @@ Server is running on http://localhost:5000
 - MongoDB Atlas for production
 - Frontend and backend will remain separate repos
 - Follow clean architecture while adding new features
+

@@ -1,8 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
 import authRoutes from "./src/routes/auth/auth.route.js";
 import gstComplianceRoutes from "./src/routes/gst_compliance.route.js";
+import calendarRoutes from "./src/routes/calendar/calendar.route.js";
+import taskRoutes from "./src/routes/task/task.route.js";
+
 import cors from "cors";
 import bodyParser from "body-parser";
 
@@ -27,9 +31,17 @@ app.use(
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/gstCompliance", gstComplianceRoutes);
+app.use("/api/calendar", calendarRoutes);
+app.use("/api/tasks", taskRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running!");
+});
+
+// Request logger
+app.use((req, res, next) => {
+  console.log(`[${req.method}] ${req.url}`);
+  next();
 });
 
 const startServer = async () => {

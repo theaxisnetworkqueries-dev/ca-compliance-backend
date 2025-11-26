@@ -6,6 +6,8 @@ import authRoutes from "./src/routes/auth/auth.route.js";
 import gstComplianceRoutes from "./src/routes/gst_compliance.route.js";
 import calendarRoutes from "./src/routes/calendar/calendar.route.js";
 import taskRoutes from "./src/routes/task/task.route.js";
+import googleAuthRoutes from "./src/routes/auth/google.route.js";
+import "./src/config/firebase.js";
 
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -30,6 +32,7 @@ app.use(
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/auth", googleAuthRoutes);
 app.use("/api/gstCompliance", gstComplianceRoutes);
 app.use("/api/calendar", calendarRoutes);
 app.use("/api/tasks", taskRoutes);

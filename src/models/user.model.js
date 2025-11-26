@@ -12,21 +12,21 @@ const userSchema = new mongoose.Schema({
       message: "Invalid email format.",
     },
   },
+  googleId: { type: String },
+  googleSignIn: { type: Boolean, default: false },
+  avatar: { type: String },
+  name: { type: String },
   password: {
     type: String,
-    required: true,
   },
   gstNumber: {
     type: String,
-    required: true,
   },
   cinNumber: {
     type: String,
-    required: true,
   },
   employeeCount: {
     type: Number,
-    required: true,
   },
 });
 

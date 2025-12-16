@@ -2,11 +2,9 @@ import Task from "../../models/task.model.js";
 
 export const createTask = async (req, res) => {
   try {
-    // 1. Destructure 'name' (matching frontend), not 'title'
-    // 2. Allow company/assignedTo to be passed in, or default to placeholders
     const {
       userId,
-      name, // Changed from 'title' to 'name'
+      name, 
       description,
       dueDate,
       company,
@@ -15,14 +13,12 @@ export const createTask = async (req, res) => {
       status,
     } = req.body;
 
-    // Validate 'name' now, not 'title'
     if (!userId || !name || !dueDate) {
       return res
         .status(400)
         .json({ message: "userId, name (title), and dueDate are required." });
     }
 
-    // 3. Create using the logic: Use provided value OR fallback to placeholder
     const newTask = await Task.create({
       userId,
       name,
